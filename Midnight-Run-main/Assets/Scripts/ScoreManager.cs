@@ -6,9 +6,14 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
+    public static ScoreManager instance;
     public Text scoreText ;
     public int score;
     
+    private void Awake () {
+        instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +22,10 @@ public class ScoreManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    public void addPoint()
+    { 
+        score += 1;
+        scoreText.text = "Puntos:" + score.ToString(); 
         
     }
 }

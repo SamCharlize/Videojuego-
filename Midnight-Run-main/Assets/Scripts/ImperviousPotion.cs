@@ -21,6 +21,7 @@ public class ImperviousPotion : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
+            ScoreManager.instance.addPoint();
         }
     }
 }
